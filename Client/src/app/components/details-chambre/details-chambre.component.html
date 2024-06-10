@@ -1,0 +1,245 @@
+<section class="breadcrumb-area bread-bg-10">
+    <div class="breadcrumb-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-content text-center">
+                        <div class="section-heading">
+                            <h2 class="sec__title text-white">chambre</h2>
+                        </div>
+                        <span class="arrow-blink">
+                            <i class="la la-arrow-down"></i>
+                        </span>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-12 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end breadcrumb-wrap -->
+    <div class="bread-svg-box">
+        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <polygon points="100 0 50 10 0 0 0 10 100 10"></polygon>
+        </svg>
+    </div><!-- end bread-svg -->
+</section>
+<section>
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                       
+                        </div>
+                        <div class="form-content">
+                            <div class="table-form table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nom</th>
+
+
+                                            <th scope="col">Douche</th>
+                                            <th scope="col">Prix</th>
+                                            <th scope="col">Personnes</th>
+                                            <th scope="col">Total prix</th>
+                                            <th scope="col">Date Promos</th>
+                                            <th scope="col">Date Early booking</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+
+
+                                            <td>Chambre</td>
+                                            <td>{{chambre.nom}}</td>
+                                            <!-- <td>
+                                      <div class="table-content">
+                                          <h3 class="title">{{c.nom}}</h3>
+                                      </div>
+                                  </td>  -->
+
+
+                                            <td>{{chambre.salledebain}}</td>
+                                            <td>{{chambre.prix}}</td>
+
+
+
+                                            <td>
+                                                <div class="col-lg-6 responsive-column">
+                                                    <div class="input-box">
+
+                                                        <div class="form-group">
+                                                            <div class="select-contain w-auto">
+                                                                <div
+                                                                    class="dropdown bootstrap-select select-contain-select">
+                                                                    <select (change)="calculerprix($event,chambre.prix)"
+                                                                        class="select-contain-select" tabindex="-98">
+                                                                        <option selected>Sélectionner le nbre de
+                                                                            personne</option>
+                                                                        <option value="2">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><input type="text" value="{{totalprix}}"></td>
+                                            <td>{{listcontratPromo[0].debutContrat}} à {{listcontratPromo[0].finContrat}}  </td>
+                                            <td>2022-08-12 à 2022-10-25</td> 
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div><!-- end form-box -->
+                </div><!-- end col-lg-12 -->
+
+            </div><!-- end row -->
+
+
+            <div class="border-top mt-5"></div>
+
+            <div class="sidebar-widget single-content-widget">
+                <h3 class="title stroke-shape">Votre reservation</h3>
+
+                <div class="sidebar-widget-item">
+                    <!-- <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
+                <label class="font-size-16">Adulte <span>Age 18+</span></label>
+                <div class="qtyBtn d-flex align-items-center">
+                    <div class="qtyDec"><i class="la la-minus"></i></div>
+                    <input type="text" name="qtyInput" value="0">
+                    <div class="qtyInc"><i class="la la-plus"></i></div>
+                </div>
+            </div>
+            end qty-box -->
+                    <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
+                        <label class="font-size-16">enfant <span>2-12 years old</span></label>
+                        <div class="qtyBtn d-flex align-items-center">
+                            <div class="qtyDec"><i class="la la-minus"></i></div>
+                            <input type="text" name="qtyInput" value="10">
+                            <div class="qtyInc"><i class="la la-plus"></i></div>
+                        </div>
+                    </div><!-- end qty-box -->
+                    <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
+                        <label class="font-size-16">Nourrissons <span>0-2 years old</span></label>
+                        <div class="qtyBtn d-flex align-items-center">
+                            <div class="qtyDec"><i class="la la-minus"></i></div>
+                            <input type="text" name="qtyInput" value="0">
+                            <div class="qtyInc"><i class="la la-plus"></i></div>
+                        </div>
+                    </div><!-- end qty-box -->
+                </div><!-- end sidebar-widget-item -->
+                <div class="sidebar-widget-item py-4">
+                    <h3 class="title stroke-shape">Supplimentaire</h3>
+                    <div class="extra-service-wrap">
+
+
+                        <div class="form-check" *ngFor="let s of listsupp">
+                            <input class="form-check-input" type="checkbox" [value]="s.prix" id="flexCheckDefault" (change)="calculerprix3($event)" />
+                            <label for="cleaningChb"
+                                class="d-flex justify-content-between align-items-center">{{s.type}} <span
+                                    class="text-black font-weight-regular">{{s.prix}} DT</span></label>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <div class="sidebar-widget-item py-4">
+                        <h3 class="title stroke-shape">Arrangement</h3>
+                        <div class="extra-service-wrap">
+
+
+                            <div class="form-check" *ngFor="let s of listarrg">
+                                <input class="form-check-input" type="checkbox" [value]="s.prix" id="flexCheckDefault"  (change)="calculerprix2($event)" />
+                                <label for="cleaningChb"
+                                    class="d-flex justify-content-between align-items-center">{{s.type}} <span
+                                    
+                                    class="text-black font-weight-regular">{{s.prix}} DT</span></label>
+                            </div>
+
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="total-price pt-3">
+                        <p class="text-black"> Votre prix</p>
+                        <p class="d-flex align-items-center"><span class="font-size-17 text-black">$</span> <input
+                                type="text" name="total" class="num" value= "{{this.totalprixglobal}}" readonly="readonly"><span>/ par
+                                chambre</span></p>
+                    </div>
+
+
+                </div><!-- end sidebar-widget-item -->
+                <div class="btn-box">
+                    <a (click)="addreservation()" class="theme-btn text-center w-100 mb-2"  >Reserver</a>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="copy-right padding-top-30px">
+                        <p class="copy__desc">
+                            © Copyright Eco Agency 2020. Made with
+                            <span class="la la-heart"></span> by <a
+                                href="https://themeforest.net/user/techydevs/portfolio">Eco Team</a>
+                        </p>
+                    </div><!-- end copy-right -->
+                </div><!-- end col-lg-7 -->
+
+            </div><!-- end row -->
+        </div><!-- end container-fluid -->
+    </div>
+
+</section>
+<!-- <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label class="label-text">Arrangement</label>
+                                    <div class="form-group">
+                                        <div class="select-contain w-auto">
+                                            <div class="dropdown bootstrap-select select-contain-select">
+                                                <select  formControlName="arrangement"  class="select-contain-select" tabindex="-98">
+                                                <option *ngFor="let c of listarrg" [value]="c._id">{{c.type}}</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+<!-- 
+                            <div class="col-lg-6 responsive-column">
+                                <div class="input-box">
+                                    <label class="label-text">Supplimentaire</label>
+                                    <div class="form-group">
+                                        <div class="select-contain w-auto">
+                                            <div class="dropdown bootstrap-select select-contain-select">
+                                                <select  formControlName="supplimentaire"  class="select-contain-select" tabindex="-98">
+                                                <option *ngFor="let c of listsupp" [value]="c._id">{{c.type}}</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->

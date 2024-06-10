@@ -1,0 +1,188 @@
+<div class="dashboard-content-wrap">
+    <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title font-size-30 text-white">Gestion des Hotels</h2>
+                        </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+
+            </div><!-- end row -->
+        </div>
+    </div>
+
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="title">liste des hotels</h3>
+                                </div>
+                            </div>
+                            <div class="form-content">
+                                <div class="row">
+                                    <div class="col-lg-9 responsive-column">
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Rechercher ..."
+                                                [(ngModel)]="term" name="term" id="term" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 responsive-column">
+
+                                        <button class="btn btn-outline-primary" routerLink="/AddHotel" >Ajouter Hotel</button>
+                                    </div>
+                                </div>
+                           
+                                
+                                <div class="table-form table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Nom </th>
+                                                <th scope="col">Categorie</th> 
+                                                <th scope="col">Adresse</th>
+                                                <th scope="col">Telephone</th>
+                                               <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr *ngFor="let ghotel of listhotel |recherche: term
+                                       
+                                              | paginate : { itemsPerPage:3, currentPage: p} ;
+                                             let  index=index ">
+
+                                                <td>{{index+1}}</td>
+                                                <td>
+                                                    <img class="img-profile" class="rounded" alt="Cinque Terre"
+                                                        width="200" height="150"
+                                                        src="http://localhost:3008/getImage/{{ghotel.galleries[0].name}}">
+                                                </td>
+                                                
+                                            
+                                                <td>{{ghotel.nom}}</td>
+                                                <td>{{ghotel.categorie[0]. nombreEtoile}} étoiles</td>
+                                                <td> {{ghotel.adresseHotel}}</td>
+                                                <td> {{ghotel.telephone}}</td>
+                                             
+
+
+                                                <td>
+                                                    <div class="table-content">
+                                                        <button class="theme-btn theme-btn-small mr-2 bg-danger "
+                                                            data-toggle="tooltip" data-placement="top" title=""
+                                                            data-original-title="Delete"
+                                                            (click)="deleteHotel(ghotel._id)"><i
+                                                                class="la la-trash"></i></button>
+
+                                                        <a routerLink="/detailshotel/{{ghotel._id}}"
+                                                            class="theme-btn theme-btn-small mr-2" data-placement="top"
+                                                            title="" data-original-title="View details"><i
+                                                                class="la la-eye"></i></a>
+
+                                                        <a (click)="getOneHotel(ghotel._id)"
+                                                            class="theme-btn theme-btn-small " data-placement="top"
+                                                            title="" data-original-title="Edit" data-toggle="modal"
+                                                            data-target="#signupPopupForm">
+                                                            <i class="la la-edit"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+
+
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                </div>
+                            </div>
+                        </div><!-- end form-box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-popup">
+        <div class="modal fade" id="signupPopupForm" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="modal-title title" id="exampleModalLongTitle">Edit Hotel</h5>
+
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="la la-close"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="contact-form-action">
+                            <form method="post" [formGroup]="HotelForm">
+
+                                <div class="input-box">
+
+
+                                    <label class="label-text">Nom </label>
+                                    <div class="form-group">
+
+                                        <input class="form-control" type="text" name="text" formControlName="nom"
+                                            placeholder="">
+                                    </div>
+                                </div>
+                                
+                                <div class="input-box">
+                                    <label class="label-text">Categorie</label>
+                                    <div class="form-group">
+
+                                        <input class="form-control" type="text" name="text" formControlName="categorie"
+                                            placeholder="">
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="input-box">
+                                    <label class="label-text">Adresse</label>
+                                    <div class="form-group">
+
+                                        <input class="form-control" type="text" name="text" formControlName="adresseHotel"
+                                            placeholder="">
+                                    </div>
+                                </div>
+                                <div class="input-box">
+                                    <label class="label-text">Telephone</label>
+                                    <div class="form-group">
+
+                                        <input class="form-control" type="text" name="text" formControlName="telephone"
+                                            placeholder="">
+                                    </div>
+                                </div>
+                              
+                              
+                                <button type="button" (click)="UpdateHotel()" class="close" class="theme-btn w-100"
+                                    data-dismiss="modal" aria-label="Close">
+                                    Enregistrer
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+

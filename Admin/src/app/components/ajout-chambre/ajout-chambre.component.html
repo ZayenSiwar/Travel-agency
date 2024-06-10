@@ -1,0 +1,82 @@
+<div class="form-content contact-form-action">
+    <form method="post" class="row MultiFile-intercepted" [formGroup]="chambreForm">
+        <div class="col-lg-6 responsive-column">
+            <div class="input-box">
+                <label class="label-text">Nombre de lit </label>
+                <div class="form-group">
+                    <span class="la la-user form-icon"></span>
+                    <input class="form-control" type="text" name="text" placeholder="nnombredelitom" formControlName="nombredelit">
+                </div>
+            </div>
+        </div><!-- end col-lg-6 -->
+        <div class="col-lg-6 responsive-column">
+            <div class="input-box">
+                <label class="label-text">Nom </label>
+                <div class="form-group">
+                    <span class="la la-user form-icon"></span>
+                    <input class="form-control" type="text" name="nom" placeholder="nom" formControlName="nom">
+                </div>
+            </div>
+        </div><!-- end col-lg-6 -->
+      
+        <div class="col-lg-6 responsive-column">
+            <div class="input-box">
+                <label class="label-text">prix</label>
+                <div class="form-group">
+                    <span class="la la-envelope-o form-icon"></span>
+                    <input class="form-control" type="text"  placeholder="prix" formControlName="prix">
+                </div>
+            </div>
+        </div><!-- end col-lg-6 -->
+       <div class="col-lg-6 responsive-column">
+            <div class="input-box">
+                <label class="label-text">Surface</label>
+                <div class="form-group">
+                    <span class="la la-envelope-o form-icon"></span>
+                    <input class="form-control" type="text" placeholder="adresse" formControlName="surface">
+                </div>
+            </div>
+        </div><!-- end col-lg-6 -->
+        <div class="col-lg-6 responsive-column">
+            <div class="input-box">
+                <label class="label-text">Salle de bain</label>
+                <div class="form-group">
+                    <span class="la la-envelope-o form-icon"></span>
+                    <input class="form-control" type="text" placeholder="description" formControlName="salledebain">
+                </div>
+            </div>
+        </div><!-- end col-lg-6 -->
+ 
+
+        <div class="col-lg-6 responsive-column">
+            <div class="input-box">
+                <label class="label-text">Hotel</label>
+                <div class="form-group">
+                    <div class="select-contain w-auto">
+                        <div class="dropdown bootstrap-select select-contain-select">
+                            <select  formControlName="hotel"  class="select-contain-select" tabindex="-98">
+                            <option *ngFor="let c of listhotel" [value]="c._id">{{c.nom}}</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-12">
+            <div class="file-upload-wrap">
+                <div class="MultiFile-wrap" id="MultiFile1"><input type="file" name="photo" (change)="handleFileInput($event)" class="multi file-upload-input with-preview MultiFile-applied"  id="MultiFile1" value=""><div class="MultiFile-list" id="MultiFile1_list"></div></div>
+                <span class="file-upload-text"><i class="la la-upload mr-2"></i>Cliquez ou faites glisser les images ici pour les télécharger</span>
+            </div>
+        </div>
+
+
+  
+  
+        <div class="btn-box pt-3">
+            <button type="submit" class="theme-btn" (click)="AddChambre()">Enregistrer<i class="la la-arrow-right ml-1"></i></button>
+        </div>
+    </form>
+</div><!-- end form-content -->

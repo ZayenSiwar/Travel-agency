@@ -1,0 +1,87 @@
+
+<div class="dashboard-content-wrap">
+    <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title font-size-30 text-white">Hotel</h2>
+                          
+                        </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+
+            </div><!-- end row -->
+        </div>
+    </div>
+
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="title">Listes des reservations Voitures</h3>
+                                </div>
+                            </div>
+                            <div class="form-content">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Rechercher ..." [(ngModel)]="term"
+                                        name="term" id="term" />
+                                </div>
+                                <div class="table-form table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Nom</th>
+                                                <th scope="col">Date de depart</th>
+                                                <th scope="col">Date de retour</th>
+                                                <th scope="col">Client</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr *ngFor="let reservation of reservationhotel
+                                       
+                                        | paginate : { itemsPerPage:5, currentPage: p} ;
+                                         let  index=index">
+
+                                                <td>{{index+1}}</td>
+                                                <td>
+                                                    <img class="img-profile" class="rounded" alt="Cinque Terre"
+                                                        width="200" height="150"
+                                                        src="http://localhost:3008/getImage/{{reservation.Rhotel?.image}}">
+                                                </td>
+                                                <td>{{reservation.Rhotel?.nom}}</td>
+                                                <td>{{reservation?.datededepart | date}}</td>  
+                                                <td>{{reservation?.date_arrivee  | date}}</td> 
+                                                <td>{{reservation.user?.nom}}</td>
+                                              
+                                                
+
+
+
+                                            
+                                            </tr>
+                                          
+
+                                        </tbody>
+                                    </table>
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                </div>
+                            </div>
+                        </div><!-- end form-box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

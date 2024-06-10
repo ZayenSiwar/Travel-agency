@@ -1,0 +1,134 @@
+<section class="breadcrumb-area bread-bg-5">
+    <div class="breadcrumb-wrap">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title text-white">Contactez-nous</h2>
+                        </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="breadcrumb-list text-right">
+                       
+                    </div><!-- end breadcrumb-list -->
+                </div><!-- end col-lg-6 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end breadcrumb-wrap -->
+    <div class="bread-svg-box">
+        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <polygon points="100 0 50 10 0 0 0 10 100 10"></polygon>
+        </svg>
+    </div><!-- end bread-svg -->
+</section>
+<section class="contact-area section--padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="form-box">
+                    <div class="form-title-wrap">
+                        <h3 class="title">Nous serions ravis de vous entendre</h3>
+                        <p class="font-size-15">Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</p>
+                    </div><!-- form-title-wrap -->
+                    <div class="form-content ">
+                        <div class="contact-form-action">
+                            <form class="row messenger-box-form" method="post" action="https://techydevs.com/demos/themes/html/trizen-demo/trizen/mailer.php">
+                                <div class="alert alert-success messenger-box-contact__msg col-lg-12" style="display: none" role="alert">
+                                    Merci ! Votre message a été envoyé.
+                                </div>
+                                <div class="col-lg-6 responsive-column"  [formGroup]="contactForm">
+                                    <div class="input-box messenger-box-input-wrap">
+                                        <label class="label-text" for="name">Votre Nom</label>
+                                        <div class="form-group">
+                                            <span class="la la-user form-icon"></span>
+                                            <input class="form-control" type="text" id="name" name="name" placeholder="Votre nom" required="" formControlName="Votre nom">
+                                        </div>
+                                    </div>
+                                </div><!-- end col-lg-6 -->
+                                <div class="col-lg-6 responsive-column">
+                                    <div class="input-box messenger-box-input-wrap">
+                                        <label class="label-text" for="email">Votre Email</label>
+                                        <div class="form-group">
+                                            <span class="la la-envelope-o form-icon"></span>
+                                            <input class="form-control" type="email" name="email" id="email" placeholder="email" required=""  formControlName="email">
+                                        </div>
+                                    </div>
+                                </div><!-- end col-lg-6 -->
+                                <div class="col-lg-12">
+                                    <div class="input-box messenger-box-input-wrap">
+                                        <label class="label-text" for="message">Message</label>
+                                        <div class="form-group">
+                                            <span class="la la-pencil form-icon"></span>
+                                            <textarea class="message-control form-control" name="message" id="message" placeholder=" message" required="" formControlName="message"></textarea>
+                                        </div>
+                                    </div>
+                                </div><!-- end col-lg-12 -->
+                                <div class="col-lg-12">
+                                    <div class="btn-box messenger-box-input-wrap">
+                                        <button name="submit" type="submit" class="theme-btn send-message-btn" id="send-message-btn" (click)="onsubmit()" >Envoyer Message</button>
+                                    </div>
+                                </div><!-- end col-lg-12 -->
+                            </form>
+                        </div><!-- end contact-form-action -->
+                    </div><!-- end form-content -->
+                </div><!-- end form-box -->
+            </div><!-- end col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="form-box">
+                    <div class="form-title-wrap">
+                        <h3 class="title">Contact</h3>
+                    </div><!-- form-title-wrap -->
+                    <div class="form-content">
+                        <div class="address-book">
+                            <ul class="list-items contact-address">
+                                <li>
+                                    <i class="la la-map-marker icon-element"></i>
+                                    <h5 class="title font-size-16 pb-1">Adresse</h5>
+                                    <p class="map__desc">
+                                       Sahloul Sousse
+                                    </p>
+                                </li>
+                                <li>
+                                    <i class="la la-phone icon-element"></i>
+                                    <h5 class="title font-size-16 pb-1">Telephone</h5>
+                                    <p class="map__desc">Telephone: +216 73 000 000</p>
+                                   
+                                </li>
+                                <li>
+                                    <i class="la la-envelope-o icon-element"></i>
+                                    <h5 class="title font-size-16 pb-1">Email</h5>
+                                    <p class="map__desc">Eco.Agence@gmail.com</p>
+                                
+                                </li>
+                            </ul>
+                            <ul class="social-profile text-center">
+                                <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="lab la-twitter"></i></a></li>
+                                <li><a href="#"><i class="lab la-instagram"></i></a></li>
+                                <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="lab la-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- end form-content -->
+                </div><!-- end form-box -->
+            </div><!-- end col-lg-4 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<section>
+<!-- <section class="map-area padding-bottom-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="map-container">
+                    <div id="map" class="leaflet-container leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-120px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 16; transform: translate3d(226px, 26px, 0px) scale(0.25);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/10/512/340?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(438px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/10/512/341?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(438px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/10/511/340?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-74px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/10/513/340?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(950px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/10/511/341?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-74px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/10/513/341?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(950px, 303px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="file:///C:/Users/user/Desktop/PFE/new%20template/techydevs.com/demos/themes/html/trizen-demo/trizen/css/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(307px, 67px, 0px);"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><img src="file:///C:/Users/user/Desktop/PFE/new%20template/techydevs.com/demos/themes/html/trizen-demo/trizen/css/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(307px, 67px, 0px); z-index: 67;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"><div class="leaflet-popup  leaflet-zoom-animated" style="opacity: 1; transform: translate3d(308px, 33px, 0px); bottom: -7px; left: -58px;"><div class="leaflet-popup-content-wrapper"><div class="leaflet-popup-content" style="width: 75px;"><b>Hello World!</b><br>I am a popup.</div></div><div class="leaflet-popup-tip-container"><div class="leaflet-popup-tip"></div></div><a class="leaflet-popup-close-button" href="#close">×</a></div></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(262291px, 174522px, 0px) scale(1024);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<div id="back-to-top" class="active">
+    <i class="la la-angle-up" title="Go top"></i>
+</div>
+</section>

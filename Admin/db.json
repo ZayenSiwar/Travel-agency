@@ -1,0 +1,35 @@
+{
+  "voitureList": [
+    {
+      "nom": "sdfgh",
+      "type": "sdfghj",
+      "modele": "sdfghj",
+      "prix": "452",
+      "id": 1
+    },
+    {
+      "nom": "sdfg",
+      "type": "sdfg",
+      "modele": "sdfgv",
+      "prix": "sdfgb",
+      "id": 2
+    },
+    {
+      "nom": "rgf",
+      "type": "ssd",
+      "modele": "sdcfv",
+      "prix": "120",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

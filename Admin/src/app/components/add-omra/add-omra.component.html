@@ -1,0 +1,60 @@
+<div class="form-box">
+    <div class="form-title-wrap">
+        <h3 class="title"><i class="la la-user mr-2 text-gray"></i>Les Informations</h3>
+    </div><!-- form-title-wrap -->
+    <div class="form-content contact-form-action">
+        <form method="post" class="row MultiFile-intercepted">
+           
+            <div class="col-lg-6 responsive-column">
+                <div class="input-box">
+                    <label class="label-text">Date de depart</label>
+                    <div class="form-group">
+               
+                        <input class="form-control" type="text" name="text" placeholder="Date de depart" formControlName="datededepart">
+                    </div>
+                </div>
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6 responsive-column">
+                <div class="input-box">
+                    <label class="label-text">Date de retour</label>
+                    <div class="form-group">
+                     
+                        <input class="form-control" type="text" name="text" placeholder="date de retour " formControlName="datederetour">
+                    </div>
+                </div>
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6 responsive-column">
+                <div class="input-box">
+                    <label class="label-text">Vol</label>
+                    <div class="form-group">
+                      
+                        <input class="form-control" type="text" name="text" placeholder="entrer le vol" formControlName="vol">
+                    </div>
+                </div>
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6 responsive-column">
+                <div class="input-box">
+                    <label class="label-text">Durée</label>
+                    <div class="form-group">
+                     
+                        <input class="form-control" type="text" name="text" placeholder="durée " formControlName="duree">
+                    </div>
+                </div>
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6 responsive-column">
+                <div class="input-box">
+                    <label class="label-text">Prix</label>
+                    <div class="form-group">
+                     
+                        <input class="form-control" type="text" name="text" placeholder="Entrer le prix " formControlName="prix">
+                    </div>
+                </div>
+            </div><!-- end col-lg-6 -->
+        </form>
+    </div><!-- end form-content -->
+</div>
+
+<div class="btn-box pt-3">
+    <button type="submit"(click)="AddOmra()" class="theme-btn">
+       Enregistrer<i class="la la-arrow-right ml-1"></i></button>
+</div>

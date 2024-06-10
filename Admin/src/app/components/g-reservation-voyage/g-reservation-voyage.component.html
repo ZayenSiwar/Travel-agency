@@ -1,0 +1,104 @@
+<div class="dashboard-content-wrap">
+    <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title font-size-30 text-white">Reservation vol</h2>
+                        </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+                
+            </div><!-- end row -->
+        </div>
+    </div>
+
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="title">Reservation </h3>
+                                    
+                                </div>
+                    
+                            </div>
+                        </div>
+       
+         
+
+
+
+
+                        <div _ngcontent-nqw-c18="" class="container-fluid">
+                            <div _ngcontent-wet-c18="" class="row">
+                                <div _ngcontent-wet-c18="" class="col-lg-12">
+                                    <div _ngcontent-wet-c18="" class="menu-wrapper">
+                                        <div _ngcontent-hwh-c18="" class="dashboard-search-box">
+                                            <div _ngcontent-hwh-c18="" class="contact-form-action">
+                   
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-content">
+                            <div class="table-form table-responsive">
+                                <div class="form-content">
+                                    <input _ngcontent-xyy-c55="" type="text" placeholder="Rechercher ..." name="term" 
+                                    id="term" class="form-control ng-pristine ng-valid ng-touched" ng-reflect-name="term">
+                                    <div class="table-form table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Photo</th>
+                                            <th scope="col">Nom Agence</th>
+                                            <th scope="col">Date de depart</th>
+                                            <th scope="col">Date de retour</th>
+                                            
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr *ngFor="let Rvoyage of reservationVoyage
+                                        | recherche: term
+                                        | paginate : { itemsPerPage:5, currentPage: p} ;
+                                         let  index=index">
+                                         <!-- src="http://localhost:3008/getImage/photo16485631433901648563143390-1193446.jpg" -->
+                                            <td>{{index+1}}</td>
+                                          <td _ngcontent-tyu-c55=""><img _ngcontent-tyu-c55="" class="img-profile rounded-circle" 
+                                            src="http://localhost:3008/getImage/{{Rvoyage.voyage.image}}" ></td>
+                                            <td>{{Rvoyage.voyage.nom}}</td>
+                                            <td>{{Rvoyage.datededepart}}</td>
+                                            <td>{{Rvoyage.date_arrivee}}</td>
+                                         
+
+                                           <td>
+                                                <button type="button" class="btn btn-danger"
+                                                    (click)="deleteRvoyage(Rvoyage._id)">
+                                                    Delete
+                                                </button>
+                                             
+                                     
+                                          
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                        </div>
+                
+
+
+

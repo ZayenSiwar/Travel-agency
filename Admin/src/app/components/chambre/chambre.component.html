@@ -1,0 +1,120 @@
+<div class="dashboard-content-wrap">
+    <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <!-- <div class="section-heading">
+                            <h2 class="sec__title font-size-30 text-white">Gestion des vols</h2>
+                        </div> -->
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+
+            </div><!-- end row -->
+        </div>
+    </div>
+
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="title">Liste  des chambres</h3>
+                                </div>
+                            </div>
+                            <div class="form-content">
+                                <div class="row">
+                                    <div class="col-lg-9 responsive-column">
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Recherche ..."
+                                                [(ngModel)]="term" name="term" id="term" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 responsive-column">
+
+                                        <button class="btn btn-outline-primary" routerLink="/ajoutChambre" >Ajout chambre</button>
+                                    </div>
+                                </div>
+                                <div class="table-form table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">id</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Nom</th>
+                                                    <th scope="col">Nombre de lit</th>
+                                                <th scope="col">Surface</th>
+                                                <th scope="col">salle de bain</th>
+                                              <th scope="col">Prix</th>
+                                               <th scope="col">Action</th>
+                                            
+                                            
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr *ngFor="let c of listchambre
+
+                                                | recherche: term
+                                                | paginate : { itemsPerPage:3, currentPage: p} ;
+                                                let  index=index"> 
+
+                                                <td>{{index+1}}</td>
+                                                <td>
+                                                    <img class="img-profile" class="rounded" alt="Error"
+                                                        width="200" height="150"
+                                                        src="{{url+c.image}}">
+                                                </td>
+                                                <td>{{c.nom}}</td>
+                                                <td>{{c.nombredelit}}</td>
+                                                <td>{{c.surface}}</td>
+                                                <td> {{c.salledebain}}</td>
+                                           
+                                                <td> {{c.prix}}</td>
+                                               
+                                               
+                                               
+                                             
+                                                <td>
+                                                    <div class="table-content">
+                                                        <button class="theme-btn theme-btn-small mr-2 bg-danger "
+                                                            data-toggle="tooltip" data-placement="top" title=""
+                                                            data-original-title="Delete"
+                                                            (click)="deletechambre(c._id)"><i
+                                                                class="la la-trash"></i></button>
+                                                                <a (click)=" getOneChambre(c._id)"
+                                                                class="theme-btn theme-btn-small " data-placement="top"
+                                                                title="" data-original-title="Edit" data-toggle="modal"
+                                                                data-target="#signupPopupForm">
+                                                                <i class="la la-edit"></i>
+                                                            </a>
+                                                                </div>
+                                                                </td>
+
+                                                              
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                </div>
+                            </div>
+                        </div><!-- end form-box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+  

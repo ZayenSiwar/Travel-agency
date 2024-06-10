@@ -1,0 +1,186 @@
+<div class="dashboard-content-wrap">
+    <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title font-size-30 text-white">Omra</h2>
+                          
+                            </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+              
+            </div><!-- end row -->
+        </div>
+    </div>
+
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="title">Les listes des Omra</h3>
+                
+               
+                            </div>
+                        </div>
+   
+
+                        <div class="form-content">
+                            <div class="row">
+                                <div class="col-lg-9 responsive-column">
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Recherche ..."
+                                            [(ngModel)]="term" name="term" id="term" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 responsive-column">
+
+                                    <button class="btn btn-outline-primary" routerLink="/AddOmra" >ajout d'omra</button>
+                                </div>
+                            </div>
+                              
+                            <div class="table-form table-responsive">
+                                
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                          
+                                            <th scope="col">Nom Omra</th>
+                                            <th scope="col">Date de depart</th>
+                                            <th scope="col">Date de retour</th>
+                                            <th scope="col">Durée</th>
+                                            <th scope="col">Client</th>
+                                            <th scope="col">Vol</th>
+                                            <th scope="col">Prix</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr *ngFor="let omra of listomra
+                                        | recherche: term
+                                        | paginate : { itemsPerPage:2, currentPage: p} ;
+                                         let  index=index">
+
+                                            <td>{{index+1}}</td>
+                                          
+                                            <td>{{omra.nom}}</td>
+                                            <td>{{omra.datededepart}}</td>
+                                            <td>{{omra.datederetour}}</td>
+                                            <td>{{omra.duree}}</td>
+                                            <td>{{omra.vol}}</td> 
+                                            <td>{{omra.client}}</td>
+                                            <td>{{omra.prix}}</td>
+                                           
+
+                                            <!-- <td>
+                                                <button type="button" class="btn btn-danger"
+                                                    (click)="deleteVoiture(voiture._id)">
+                                                    Delete
+                                                </button>
+                                             
+                                                <div class="table-content">
+                                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="tooltip" data-placement="top" title="Edit"><i class="la la-edit"></i></a>
+                                                </div>
+                                            </td> -->
+                                            <td>
+                                            <div class="table-content">
+                                                <button class="theme-btn theme-btn-small mr-2 bg-danger " data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" (click)="deleteOmra(omra._id)"><i class="la la-trash"></i></button>
+                                               
+                                                <a href="#" [routerLink]="['/detailsomra']"  class="theme-btn theme-btn-small mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View details"><i class="la la-eye"></i></a>
+
+                                                <a href="#" class="theme-btn theme-btn-small" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-toggle="modal" data-target="#signupPopupForm">
+                                                    <i class="la la-edit" ></i>
+                                                </a>
+                                       
+
+                                            </div>
+                                        </td>
+                                            <!-- <td>
+                                                <div class="table-content">
+                                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="tooltip" data-placement="top" title="Edit"><i class="la la-edit"></i></a>
+                                                </div>
+                                            </td> -->
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                        </div>
+                    </div><!-- end form-box -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal-popup">
+
+    <div class="modal fade" id="signupPopupForm" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title title" id="exampleModalLongTitle">Edit Vehicule</h5>
+                 
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="la la-close"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form-action">
+                        <form method="post">
+                            <div class="input-box">
+
+                                
+                                <label class="label-text">Nom Voiture</label>
+                                <div class="form-group">
+                        
+                                    <input class="form-control" type="text" name="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Modele Voiture</label>
+                                <div class="form-group">
+                                
+                                    <input class="form-control" type="text" name="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Type Voiture</label>
+                                <div class="form-group">
+                                  
+                                    <input class="form-control" type="text" name="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Prix</label>
+                                <div class="form-group">
+                                  
+                                    <input class="form-control" type="text" name="text" placeholder="">
+                                </div>
+                            </div>
+                      
+                            <button type="button" class="close" class="theme-btn w-100" aria-label="Close">
+                              Enregistrer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,418 @@
+<!-- <body>
+    <div class="modal fade show" id="signupPopupForm" tabindex="-1" role="dialog"
+        style="display: block; padding-right: 14px;" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="contact-form-action">
+
+
+
+                        <form method="post" [formGroup]="RegistreForm">
+                            <div class="input-box">
+                                <label class="label-text">Nom</label>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="la la-close"></span>
+                                </button>
+                                <div class="form-group">
+                                    <input class="form-control " type="text" id="exampleFirstName" name="text"
+                                        placeholder="First Name" formControlName="nom">
+                                        <div *ngIf="RegistreForm.controls['nom'].errors?.['required'] && (RegistreForm.controls['nom'].dirty || RegistreForm.controls['nom'].touched)" class="alert1" >
+                                         le nom est requis.
+                                          </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Prenom</label>
+                                <div class="form-group">
+
+                                    <input class="form-control " id="exampleLastName" type="text" name="text"
+                                        placeholder="Last Name" formControlName="prenom">
+                                        <div *ngIf="RegistreForm.controls['prenom'].errors?.['required'] && (RegistreForm.controls['prenom'].dirty || RegistreForm.controls['prenom'].touched)" class="alert1" >
+                                            le nom est requis.
+                                             </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Email </label>
+                                <div class="form-group">
+                                    <span class="la la-envelope form-icon"></span>
+                                    <input class="form-control" type="email" name="text" placeholder="Type your email"
+                                        formControlName="email">
+                                        <div *ngIf="RegistreForm.controls['email'].errors?.['required'] && (RegistreForm.controls['email'].dirty || RegistreForm.controls['email'].touched)" class="alert1" >
+                                            l'email est requis.
+                                             </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Mot de passe</label>
+                                <div class="form-group">
+
+                                    <input class="form-control " id="exampleInputPassword" type="password"
+                                        name="password" placeholder="votre mot de passe" formControlName="motdepasse">
+                                </div>
+                                <div *ngIf="RegistreForm.controls['motdepasse'].errors?.['required'] && (RegistreForm.controls['motdepasse'].dirty || RegistreForm.controls['motdepasse'].touched)" class="alert1" >
+                                    le mot de passe est requis.
+                                     </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Telephone</label>
+                                <div class="form-group">
+
+                                    <input class="form-control" type="number" id="phone" name="text"
+                                        placeholder="Your phone" formControlName="num">
+                                        <div *ngIf="RegistreForm.controls['num'].errors?.['required'] && (RegistreForm.controls['num'].dirty || RegistreForm.controls['num'].touched)" class="alert1" >
+                                            le numero  est requis.
+                                             </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Ville</label>
+                                <div class="form-group">
+
+
+                                    <input class="form-control " id="exampleLastName" type="text" name="text"
+                                        placeholder="Last Name" formControlName="ville">
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-user btn-block" [disabled]="!RegistreForm.valid" (click)="onsubmit()">Connexion </button>
+
+                            <div class="action-box text-center">
+                                <p class="font-size-14">Or Sign up Using</p>
+                                <ul class="social-profile py-3">
+                                    <li><a href="#www.facebook.com" class="bg-5 text-white"><i
+                                                class="lab la-facebook-f"></i></a></li>
+                                    <li><a href="#www.twitter.com" class="bg-6 text-white"><i
+                                                class="lab la-twitter"></i></a></li>
+                                    <li><a href="#www.intagram.com" class="bg-7 text-white"><i
+                                                class="lab la-instagram"></i></a></li>
+                                    <li><a href="#www.linkdin.com" class="bg-5 text-white"><i
+                                                class="lab la-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="daterangepicker ltr show-calendar opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr show-calendar opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr show-calendar opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr show-calendar opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr show-calendar opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="daterangepicker ltr single auto-apply opensright">
+        <div class="ranges"></div>
+        <div class="drp-calendar left single" style="display: block;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-calendar right" style="display: none;">
+            <div class="calendar-table"></div>
+            <div class="calendar-time" style="display: none;"></div>
+        </div>
+        <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default"
+                type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled"
+                type="button">Apply</button> </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+</body> -->
+
+
+
+<div class="modal-popup">
+    <div class="modal fade" id="signupPopupForm" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title title" id="exampleModalLongTitle"></h5>
+                        <p class="font-size-14">Bonjour ! Bienvenue Créer un nouveau compte</p>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="la la-close"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form-action">
+                        <form method="post" [formGroup]="RegistreForm">
+                            <div class="input-box">
+                                <label class="label-text">Nom</label>
+                               
+                                <div class="form-group">
+                                    <input class="form-control " type="text" id="exampleFirstName" name="text"
+                                        placeholder="First Name" formControlName="nom">
+                                        <div *ngIf="RegistreForm.controls['nom'].errors?.['required'] && (RegistreForm.controls['nom'].dirty || RegistreForm.controls['nom'].touched)" class="alert1" >
+                                         le nom est requis.
+                                          </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Prenom</label>
+                                <div class="form-group">
+
+                                    <input class="form-control " id="exampleLastName" type="text" name="text"
+                                        placeholder="Last Name" formControlName="prenom">
+                                        <div *ngIf="RegistreForm.controls['prenom'].errors?.['required'] && (RegistreForm.controls['prenom'].dirty || RegistreForm.controls['prenom'].touched)" class="alert1" >
+                                            le nom est requis.
+                                             </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Email </label>
+                                <div class="form-group">
+                                    <span class="la la-envelope form-icon"></span>
+                                    <input class="form-control" type="email" name="text" placeholder="Type your email"
+                                        formControlName="email">
+                                        <div *ngIf="RegistreForm.controls['email'].errors?.['required'] && (RegistreForm.controls['email'].dirty || RegistreForm.controls['email'].touched)" class="alert1" >
+                                            l'email est requis.
+                                             </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Mot de passe</label>
+                                <div class="form-group">
+
+                                    <input class="form-control " id="exampleInputPassword" type="password"
+                                        name="password" placeholder="votre mot de passe" formControlName="motdepasse">
+                                </div>
+                                <div *ngIf="RegistreForm.controls['motdepasse'].errors?.['required'] && (RegistreForm.controls['motdepasse'].dirty || RegistreForm.controls['motdepasse'].touched)" class="alert1" >
+                                    le mot de passe est requis.
+                                     </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Telephone</label>
+                                <div class="form-group">
+
+                                    <input class="form-control" type="number" id="phone" name="text"
+                                        placeholder="Your phone" formControlName="num">
+                                        <div *ngIf="RegistreForm.controls['num'].errors?.['required'] && (RegistreForm.controls['num'].dirty || RegistreForm.controls['num'].touched)" class="alert1" >
+                                            le numero  est requis.
+                                             </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Ville</label>
+                                <div class="form-group">
+
+
+                                    <input class="form-control " id="exampleLastName" type="text" name="text"
+                                        placeholder="Last Name" formControlName="ville">
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-user btn-block" [disabled]="!RegistreForm.valid" (click)="onsubmit()">Connexion </button>
+
+                            <div class="action-box text-center">
+                                <p class="font-size-14"></p>
+                                <ul class="social-profile py-3">
+                                    <li><a href="#www.facebook.com" class="bg-5 text-white"><i
+                                                class="lab la-facebook-f"></i></a></li>
+                                    <li><a href="#www.twitter.com" class="bg-6 text-white"><i
+                                                class="lab la-twitter"></i></a></li>
+                                    <li><a href="#www.intagram.com" class="bg-7 text-white"><i
+                                                class="lab la-instagram"></i></a></li>
+                                    <li><a href="#www.linkdin.com" class="bg-5 text-white"><i
+                                                class="lab la-linkedin-in"></i></a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div><!-- end contact-form-action -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

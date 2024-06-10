@@ -1,0 +1,10 @@
+const express = require("express")
+const service_Controller = require("../controllers/service_controller")
+const route = express.Router()
+route.post("/create",service_Controller.create)
+route.get("/getall",service_Controller.getall)
+route.put("/update/:id",service_Controller.update)
+route.get("/getbyname",service_Controller.getbyname)
+route.get("/getbyid/:id",service_Controller.getbyid)
+route.delete("/delete/:id",service_Controller.delete)
+module.exports= route

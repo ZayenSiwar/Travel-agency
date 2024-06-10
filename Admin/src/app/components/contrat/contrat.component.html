@@ -1,0 +1,267 @@
+
+<div class="dashboard-bread dashboard--bread dashboard-bread-2">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="breadcrumb-content">
+                    <div class="section-heading">
+                        <h2 class="sec__title font-size-30 text-white">Les Contrats</h2>
+                    </div>
+                </div><!-- end breadcrumb-content -->
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6">
+                <div class="breadcrumb-list text-right">
+                    <ul class="list-items">
+                        <li><a href="index.html" class="text-white">Accueil</a></li>
+                        <li>Dashboard</li>
+                        <li>Contrat</li>
+                    </ul>
+                </div><!-- end breadcrumb-list -->
+            </div><!-- end col-lg-6 -->
+        </div><!-- end row -->
+    </div>
+</div>
+
+<div class="dashboard-main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-box">
+                    <div class="form-content">
+                        <!-- <div class="table-form table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">debut  </th>
+                                       
+                                    <th scope="col">fin</th>
+                                    <th scope="col">prix</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                               
+                                 <tr  *ngFor="let c of listcontrat |recherche: term
+                                       
+                                | paginate : { itemsPerPage:3, currentPage: p} ;
+                               let  index=index ">
+                                    <td >{{c.debutContrat}} 
+                                    </td>
+                                  
+                                    <td>{{c.finContrat}}</td>
+                                    <td>{{c.prix}}</td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div> -->
+                    </div>
+                    <div class="form-content">
+                        <div class="row">
+                            <div class="col-lg-9 responsive-column">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Recherche ..."
+                                        [(ngModel)]="term" name="term" id="term" />
+                                </div>
+                            </div>
+                            <div class="col-lg-3 responsive-column">
+
+                                <button class="btn btn-outline-primary" routerLink="/AddOmra" >ajout de contrat</button>
+                            </div>
+                        </div>
+                        <div class="table-form table-responsive">
+                            
+                            <table class="table">
+                                
+                                <thead>
+                                <tr>
+                                    <th scope="col">Debut promo  </th>
+                                       
+                                    <th scope="col">Fin promo</th>
+                                   
+                                    <th scope="col">prix</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                               
+                                 <tr  *ngFor="let p of listcontratPromo |recherche: term
+                                       
+                                | paginate : { itemsPerPage:3, currentPage: p} ;
+                               let  index=index ">
+                                    <td >{{p.debutContrat}} 
+                                    </td>
+                                  
+                                    <td>{{p.finContrat}}</td>
+                                    <td>{{p.prix}}</td>
+                                <td>
+                                    <div>
+                                    <a (click)="  getOneContratPromo (p._id)"
+                                    class="theme-btn theme-btn-small " data-placement="top"
+                                    title="" data-original-title="Edit" data-toggle="modal"
+                                    data-target="#signupPopupForm">
+                                    <i class="la la-edit"></i>
+                                </a>
+                            </div>
+                        </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><!-- end form-box -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-box">
+                 
+                     <div class="form-content">
+                        <div class="table-form table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr >
+                                    <th scope="col">debut  Early  </th>
+                                       
+                                    <th scope="col">fin </th>
+                                    <th scope="col">prix</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                               
+                                <tr  *ngFor="let e of listcontratEarly |recherche: term
+                                       
+                                | paginate : { itemsPerPage:3, currentPage: p} ;
+                               let  index=index ">
+                                    <td >{{e.debutContrat}} 
+                                    </td>
+                                  
+                                    <td>{{e.finContrat}}</td>
+                                    <td>{{e.prix}}</td>
+                                    <td>
+                                        <div>
+                                        <a (click)=" getOneContratEarly(e._id)"
+                                        class="theme-btn theme-btn-small " data-placement="top"
+                                        title="" data-original-title="Edit" data-toggle="modal"
+                                        data-target="#signupPopupForm">
+                                        <i class="la la-edit"></i>
+                                    </a>
+                                </div>
+                            </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div><!-- end form-box -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+      <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link page-link-nav" href="#" aria-label="Previous">
+                                <span aria-hidden="true"><i class="la la-angle-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link page-link-nav" href="#">1</a></li>
+                        <li class="page-item active">
+                            <a class="page-link page-link-nav" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link page-link-nav" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link page-link-nav" href="#" aria-label="Next">
+                                <span aria-hidden="true"><i class="la la-angle-right"></i></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="border-top mt-5"></div>
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="copy-right padding-top-30px">
+                    <p class="copy__desc">
+                        © Copyright Eco Agency 2020. Made with
+                        <span class="la la-heart"></span> by <a href="https://themeforest.net/user/techydevs/portfolio">Eco Team</a>
+                    </p>
+                </div><!-- end copy-right -->
+            </div><!-- end col-lg-7 -->
+            <div class="col-lg-5">
+                <div class="copy-right-content text-right padding-top-30px">
+                    <ul class="social-profile">
+                        <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="lab la-twitter"></i></a></li>
+                        <li><a href="#"><i class="lab la-instagram"></i></a></li>
+                        <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
+                    </ul>
+                </div><!-- end copy-right-content -->
+            </div><!-- end col-lg-5 -->
+        </div><!-- end row -->
+    </div><!-- end container-fluid -->
+</div>
+
+<div class="modal-popup">
+    <div class="modal fade" id="signupPopupForm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title title" id="exampleModalLongTitle">Modifier contrat</h5>
+
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="la la-close"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form-action">
+                        <form method="post" [formGroup]="contratForm">
+                            <div class="input-box">
+
+
+                                <label class="label-text">Debut promo</label>
+                                <div class="form-group">
+
+                                    <input class="form-control" type="text" name="text" formControlName="debutContrat"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Fin promo</label>
+                                <div class="form-group">
+
+                                    <input class="form-control" type="text" name="text" formControlName="finContrat"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            
+                     
+                            <div class="input-box">
+                                <label class="label-text">Prix</label>
+                                <div class="form-group">
+
+                                    <input class="form-control" type="text" name="text" formControlName="prix"
+                                        placeholder="">
+                                </div>
+                            </div>
+
+                            <button type="button" (click)="updateContratPromo()" class="close" class="theme-btn w-100"
+                                data-dismiss="modal" aria-label="Close">
+                                Enregistrer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

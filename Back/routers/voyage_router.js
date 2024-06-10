@@ -1,0 +1,10 @@
+const express = require ("express")
+const voyagecontroller = require("../controllers/voyage-controller")
+const route = express.Router()
+route.post("/create",voyagecontroller.create)
+route.put("/update/:id",voyagecontroller.update)
+route.get("/getall",voyagecontroller.getall)
+route.get("/getbyid/:id",voyagecontroller.getbyid)
+route.get("/getbyname",voyagecontroller.getbyname)
+route.delete("/delete/:id",voyagecontroller.delete)
+module.exports = route

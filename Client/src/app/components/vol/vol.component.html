@@ -1,0 +1,98 @@
+<section class="breadcrumb-area bread-bg-6">
+    <div class="breadcrumb-wrap">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content text-center">
+                        <div class="section-heading">
+                            <h2 class="sec__title text-white">L'instant le plus heureux d'une vie humaine 
+                                <br>est le départ vers une terre inconnue</h2>
+                      </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+              
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end breadcrumb-wrap -->
+
+
+
+    <div class="bread-svg-box">
+        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
+    </div><!-- end bread-svg -->
+</section>
+
+<section class="card-area section--padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="filter-wrap margin-bottom-30px">
+                    <div class="filter-top d-flex align-items-center justify-content-between pb-4">
+                        <div>
+                            <h3 class="title font-size-24"></h3>
+                            <p class="font-size-14"><span class="mr-1 pt-1"></span></p>
+                        </div>
+                        <div class="layout-view d-flex align-items-center">
+                            <a href="flight-grid.html" data-toggle="tooltip" data-placement="top" title="" class="active" data-original-title="Grid View"><i class="la la-th-large"></i></a>
+                            <a href="flight-list.html" data-toggle="tooltip" data-placement="top" title="" data-original-title="List View"><i class="la la-th-list"></i></a>
+                        </div>
+                    </div><!-- end filter-top -->
+                  
+                </div><!-- end filter-wrap -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row">
+            <div class="col-lg-4 responsive-column" *ngFor="let voyage of listVol">
+                <div class="card-item flight-card flight--card" >
+                    <div class="card-img" >
+                        
+                        <img src="http://localhost:3008/getImage/{{voyage.image}}" alt="flight-logo-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top-title d-flex justify-content-between">
+                            <div>
+                                <h3 class="card-title font-size-17"></h3>
+                                <p class="card-meta font-size-14">{{voyage.nom}}</p>
+                            </div>
+                            <div>
+                                <div class="text-right">
+                                 
+                                    <h6 class="font-weight-bold color-text">{{voyage.prix}}</h6>
+                                </div>
+                            </div>
+                        </div><!-- end card-top-title -->
+                        <div class="flight-details py-3">
+                            <div class="flight-time pb-3">
+                                <div class="flight-time-item take-off d-flex">
+                                    <div class="flex-shrink-0 mr-2">
+                                        <i class="la la-plane"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">{{voyage.paysdedepart}}</h3>
+                                       
+                                    </div>
+                                </div>
+                                <div class="flight-time-item landing d-flex">
+                                    <div class="flex-shrink-0 mr-2">
+                                        <i class="la la-plane"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="card-title font-size-15 font-weight-medium mb-0">{{voyage.paysarrivage}}</h3>
+                                       
+                                    </div>
+                                </div>
+                            </div><!-- end flight-time -->
+                      </div><!-- end flight-details -->
+                        <div class="btn-box text-center">
+                            <a class="theme-btn theme-btn-small w-100" routerLink="/detailleVol/{{voyage._id}}" >View Details</a>
+                        </div>
+                    </div><!-- end card-body -->
+                </div><!-- end card-item -->
+            </div><!-- end col-lg-4 -->
+          
+        
+          
+        </div><!-- end row -->
+     
+    </div><!-- end container -->
+</section>

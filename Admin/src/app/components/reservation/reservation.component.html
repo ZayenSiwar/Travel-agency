@@ -1,0 +1,97 @@
+
+<div class="dashboard-content-wrap">
+    <div class="dashboard-bread dashboard--bread dashboard-bread-2">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="breadcrumb-content">
+                        <div class="section-heading">
+                            <h2 class="sec__title font-size-30 text-white">Reservations</h2>
+                            <!-- <button type="button" class="breadcrumb-list text-right"
+                                [routerLink]="['/AddVoiture']">Ajouter Vehicule</button> -->
+                        </div>
+                    </div><!-- end breadcrumb-content -->
+                </div><!-- end col-lg-6 -->
+
+            </div><!-- end row -->
+        </div>
+    </div>
+
+    <div class="dashboard-main-content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="form-box">
+                        <div class="form-title-wrap">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h3 class="title">Liste des reservations des Clients</h3>
+                                </div>
+                            </div>
+                            <div class="form-content">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search ..." [(ngModel)]="term"
+                                        name="term" id="term" />
+                                </div>
+                                <div class="table-form table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Id</th>
+
+                                                <th scope="col">Nom</th>
+                                                <th scope="col">Prenom</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Numero</th>
+                                               <th scope="col">Action</th>
+                                               <th scope="col" > Reservation</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr *ngFor="let user of listUser |recherche: term 
+
+                                        | paginate : { itemsPerPage:5, currentPage: p} ;
+                                         let  index=index">
+
+                                                <td>{{index+1}}</td>
+
+                                                <td>{{user.nom}}</td>
+                                                <td>{{user.prenom}}</td>
+                                                <td>{{user.email}}</td>
+                                                <td>{{user.num}}</td>
+                                            
+                                                <td>
+                                                    <div class="table-content">
+                                                        <button class="theme-btn theme-btn-small mr-2 bg-danger "
+                                                        data-toggle="tooltip" data-placement="top" title=""
+                                                        data-original-title="Delete"
+                                                        (click)="deleteUser(user._id)"><i
+                                                            class="la la-trash"></i></button>
+
+                                                    </div>
+                                                </td>
+                                                <td><a routerLink="/detailleReservation/{{user._id}}" class="btn-text">Voir detailles<i class="la la-angle-right"></i></a></td>
+
+
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                </div>
+                            </div>
+                        </div><!-- end form-box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
